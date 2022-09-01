@@ -1,4 +1,4 @@
-package com.itheima
+package com.itheima;
 
 import org.junit.Assert;
 import org.junit.Test;
