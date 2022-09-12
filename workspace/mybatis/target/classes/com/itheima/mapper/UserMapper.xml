@@ -5,6 +5,20 @@
 <!--namespace 命名空间-->
 <mapper namespace="com.itheima.mapper.UserMapper">
     <select id="selectAll" resultType="user">
-    select * from tb_user;
+    select *
+    from
+    tb_user;
   </select>
+<!--    <select id="selectById" resultType="user">-->
+<!--          select * from tb_user where id = #{id};-->
+<!--    </select>-->
+
+    <select id="select" resultType="user">
+        select *
+        from tb_user
+        where
+            username = #{arg0}
+        and password = #{arg1}
+    </select>
+
 </mapper>
