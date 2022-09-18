@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tomcat-demo1:war">
+    <output-path>$PROJECT_DIR$/../tomcat-demo1/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>tomcat-demo1</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="tomcat-demo1-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="tomcat-demo1:war exploded" />
+    </root>
+  </artifact>
+</component>

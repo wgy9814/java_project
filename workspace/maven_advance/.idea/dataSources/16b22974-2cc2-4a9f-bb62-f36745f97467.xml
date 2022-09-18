@@ -811,30 +811,62 @@ SELECT|sys.sys_config:null
       <ObjectGrants>ALL PRIVILEGES!
 </ObjectGrants>
     </user>
-    <table id="253" parent="15" name="tb_user"/>
-    <column id="254" parent="253" name="id">
+    <table id="253" parent="15" name="tb_brand"/>
+    <table id="254" parent="15" name="tb_user"/>
+    <column id="255" parent="253" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="255" parent="253" name="username">
+    <column id="256" parent="253" name="brand_name">
       <Position>2</Position>
-      <DataType>varchar(20)|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
     </column>
-    <column id="256" parent="253" name="password">
+    <column id="257" parent="253" name="company_name">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="257" parent="253" name="gender">
+    <column id="258" parent="253" name="orderer">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="259" parent="253" name="description">
+      <Position>5</Position>
+      <DataType>varchar(100)|0s</DataType>
+    </column>
+    <column id="260" parent="253" name="status">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <key id="261" parent="253" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="262" parent="254" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="263" parent="254" name="username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="264" parent="254" name="password">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="265" parent="254" name="gender">
       <Position>4</Position>
       <DataType>char(1)|0s</DataType>
     </column>
-    <column id="258" parent="253" name="addr">
+    <column id="266" parent="254" name="addr">
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
     </column>
-    <key id="259" parent="253" name="PRIMARY">
+    <key id="267" parent="254" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

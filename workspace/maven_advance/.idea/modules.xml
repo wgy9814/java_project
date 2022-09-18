@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../mybatis/mybatis.iml" filepath="$PROJECT_DIR$/../mybatis/mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/../springmvc_ssm/springmvc_ssm.iml" filepath="$PROJECT_DIR$/../springmvc_ssm/springmvc_ssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tomcat-demo1/tomcat-demo1.iml" filepath="$PROJECT_DIR$/../tomcat-demo1/tomcat-demo1.iml" />
     </modules>
   </component>
 </project>

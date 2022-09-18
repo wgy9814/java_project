@@ -7,11 +7,5 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/mybatis</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="@localhost" uuid="ff37f086-90e2-43b0-9776-5fdb435cf6e2">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
-    </data-source>
   </component>
 </project>

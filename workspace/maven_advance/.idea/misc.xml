@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/../springmvc_ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/../tomcat-demo1" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -9,6 +10,7 @@
         <option value="$PROJECT_DIR$/../springmvc_ssm/pom.xml" />
         <option value="$PROJECT_DIR$/../../mybatis_demo/pom.xml" />
         <option value="$PROJECT_DIR$/../mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/../tomcat-demo1/pom.xml" />
       </list>
     </option>
   </component>

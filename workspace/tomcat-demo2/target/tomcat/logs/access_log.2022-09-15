@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [15/Sep/2022:21:52:52 +0800] "GET /tomcat_demo2_war/ HTTP/1.1" 404 985 http-bio-9999-exec-1 30
+0:0:0:0:0:0:0:1 - - [15/Sep/2022:21:52:54 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-9999-exec-4 2
+0:0:0:0:0:0:0:1 - - [15/Sep/2022:21:52:55 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-9999-exec-5 1
+0:0:0:0:0:0:0:1 - - [15/Sep/2022:21:52:55 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-9999-exec-6 0
