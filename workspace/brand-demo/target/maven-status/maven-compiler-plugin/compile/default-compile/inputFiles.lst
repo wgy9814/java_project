@@ -1,0 +1,17 @@
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\mapper\BrandMapper.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\web\SelectByIdServlet.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\pojo\Brand.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\util\CheckCodeUtil.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\web\CheckCodeServlet.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\util\SqlSessionFactoryUtils.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\service\UserService.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\web\UpdateServlet.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\mapper\UserMapper.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\web\RegisterServlet.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\web\SelectAllServlet.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\pojo\User.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\web\AddServlet.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\web\listener\ContextLoaderListener.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\web\filter\LoginFilter.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\service\BrandService.java
+G:\java_project\workspace\brand-demo\src\main\java\com\itheima\web\LoginServlet.java

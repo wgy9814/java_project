@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+  //1. 定义JSON字符串
+  var jsonStr = '{"name":"zhangsan","age":23,"addr":["北京","上海","西安"]}';
+  //alert(jsonStr);
+  //2. 将JSON字符串转为JS对象
+  let jsObject = JSON.parse(jsonStr);
+  //alert(jsObject);
+  let name = jsObject.name;
+  //alert(name);
+
+  //3. JS对象转为JSON字符串
+  let jsonStr2 = JSON.stringify(jsObject);
+  alert(jsonStr2)
+
+</script>
+
+</body>
+</html>

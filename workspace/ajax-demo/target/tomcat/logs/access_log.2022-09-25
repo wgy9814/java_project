@@ -1,0 +1,11 @@
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:14:59:12 +0800] "GET /ajax-demo HTTP/1.1" 302 - http-bio-8080-exec-2 0
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:14:59:12 +0800] "GET /ajax-demo/ HTTP/1.1" 404 971 http-bio-8080-exec-3 11
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:14:59:47 +0800] "GET /ajax-demo/01-ajax-demo1.html HTTP/1.1" 200 692 http-bio-8080-exec-4 3
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:14:59:47 +0800] "GET /ajax-demo/ajaxServlet HTTP/1.1" 200 11 http-bio-8080-exec-5 1
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:15:01:01 +0800] "GET /ajax-demo/register.html HTTP/1.1" 200 2920 http-bio-8080-exec-7 2
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:15:01:01 +0800] "GET /ajax-demo/css/register.css HTTP/1.1" 200 2732 http-bio-8080-exec-9 2
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:15:01:01 +0800] "GET /ajax-demo/imgs/a.jpg HTTP/1.1" 200 2823 http-bio-8080-exec-8 2
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:15:01:01 +0800] "GET /ajax-demo/imgs/reg_bg_min.jpg HTTP/1.1" 200 389286 http-bio-8080-exec-8 7
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:15:01:05 +0800] "GET /ajax-demo/selectUserServlet?username=wuguangyuan HTTP/1.1" 200 4 http-bio-8080-exec-8 1
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:15:01:11 +0800] "GET /ajax-demo/register.html HTTP/1.1" 304 - http-bio-8080-exec-8 3
+0:0:0:0:0:0:0:1 - - [25/Sep/2022:15:01:14 +0800] "GET /ajax-demo/selectUserServlet?username=wuguangyuan HTTP/1.1" 200 4 http-bio-8080-exec-8 0

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="brand-case:war">
+    <output-path>$PROJECT_DIR$/../../../进阶课程/黑马程序员课件/最新14天学会JavaWeb（高效学习版）/JavaWeb-资料/day13-Vue&amp;Element(1)/day13-Vue&amp;Element/02-综合案例/代码/brand-case/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>brand-case</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="brand-case-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="brand-case:war exploded" />
+    </root>
+  </artifact>
+</component>

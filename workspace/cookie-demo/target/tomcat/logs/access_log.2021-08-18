@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [18/Aug/2021:10:26:17 +0800] "GET /cookie-demo/demo1 HTTP/1.1" 200 - http-bio-8080-exec-1 23
+0:0:0:0:0:0:0:1 - - [18/Aug/2021:10:27:51 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-5 0
+0:0:0:0:0:0:0:1 - - [18/Aug/2021:10:28:05 +0800] "GET /cookie-demo/demo1 HTTP/1.1" 200 - http-bio-8080-exec-7 2
+0:0:0:0:0:0:0:1 - - [18/Aug/2021:10:28:05 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-9 0

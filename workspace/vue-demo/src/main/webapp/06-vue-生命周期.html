@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <div v-for="addr in addrs">
+        {{addr}} <br>
+    </div>
+
+    <hr>
+    <div v-for="(addr,i) in addrs">
+        {{i+1}}--{{addr}} <br>
+    </div>
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+
+    //1. 创建Vue核心对象
+    new Vue({
+        el:"#app",
+        data(){
+            return {
+                username:"",
+                url:"https://www.baidu.com",
+                count:3,
+                addrs:["北京","上海","西安"]
+            }
+        },
+        methods:{
+            show(){
+                alert("我被点了...");
+            }
+        },
+        /*mounted:function () {
+
+        }*/
+        mounted(){
+            alert("加载完成...")
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

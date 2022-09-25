@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <a href="addBrand.html"><input type="button" value="新增"></a><br>
+    <hr>
+    <table id="brandTable" border="1" cellspacing="0" width="100%">
+        <tr>
+            <th>序号</th>
+            <th>品牌名称</th>
+            <th>企业名称</th>
+            <th>排序</th>
+            <th>品牌介绍</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+
+        <!--
+            使用v-for遍历tr
+        -->
+
+        <tr v-for="(brand,i) in brands" align="center">
+            <td>{{i + 1}}</td>
+            <td>{{brand.brandName}}</td>
+            <td>{{brand.companyName}}</td>
+            <td>{{brand.ordered}}</td>
+            <td>{{brand.description}}</td>
+            <td>{{brand.statusStr}}</td>
+            <td><a href="#">修改</a> <a href="#">删除</a></td>
+        </tr>
+
+        <!--<tr align="center">
+            <td>2</td>
+            <td>优衣库</td>
+            <td>优衣库</td>
+            <td>10</td>
+            <td>优衣库，服适人生</td>
+            <td>禁用</td>
+
+            <td><a href="#">修改</a> <a href="#">删除</a></td>
+        </tr>
+
+        <tr align="center">
+            <td>3</td>
+            <td>小米</td>
+            <td>小米科技有限公司</td>
+            <td>1000</td>
+            <td>为发烧而生</td>
+            <td>启用</td>
+
+            <td><a href="#">修改</a> <a href="#">删除</a></td>
+        </tr>-->
+    </table>
+</div>
+<script src="js/axios-0.18.0.js"></script>
+<script src="js/vue.js"></script>
+
+<script>
+
+    new Vue({
+        el: "#app",
+        data(){
+            return{
+                brands:[]
+            }
+        },
+        mounted(){
+            // 页面加载完成后，发送异步请求，查询数据
+            var _this = this;
+            axios({
+                method:"get",
+                url:"http://localhost:8080/brand-demo/selectAllServlet"
+            }).then(function (resp) {
+                _this.brands = resp.data;
+            })
+        }
+    })
+
+
+    /*//1. 当页面加载完成后，发送ajax请求
+    window.onload = function () {
+        //2. 发送ajax请求
+        axios({
+            method:"get",
+            url:"http://localhost:8080/brand-demo/selectAllServlet"
+        }).then(function (resp) {
+            //获取数据
+            let brands = resp.data;
+            let tableData = " <tr>\n" +
+                "        <th>序号</th>\n" +
+                "        <th>品牌名称</th>\n" +
+                "        <th>企业名称</th>\n" +
+                "        <th>排序</th>\n" +
+                "        <th>品牌介绍</th>\n" +
+                "        <th>状态</th>\n" +
+                "        <th>操作</th>\n" +
+                "    </tr>";
+
+            for (let i = 0; i < brands.length ; i++) {
+                let brand = brands[i];
+
+                tableData += "\n" +
+                    "    <tr align=\"center\">\n" +
+                    "        <td>"+(i+1)+"</td>\n" +
+                    "        <td>"+brand.brandName+"</td>\n" +
+                    "        <td>"+brand.companyName+"</td>\n" +
+                    "        <td>"+brand.ordered+"</td>\n" +
+                    "        <td>"+brand.description+"</td>\n" +
+                    "        <td>"+brand.status+"</td>\n" +
+                    "\n" +
+                    "        <td><a href=\"#\">修改</a> <a href=\"#\">删除</a></td>\n" +
+                    "    </tr>";
+            }
+
+            // 设置表格数据
+            document.getElementById("brandTable").innerHTML = tableData;
+        })
+    }*/
+
+
+</script>
+
+
+</body>
+</html>
