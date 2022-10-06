@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl">
+<!--        根据构造方法参数类型注入-->
+        <constructor-arg type="int" value="10"/>
+        <constructor-arg type="java.lang.String" value="mysql"/>
+    </bean>
+    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl"/>
+
+    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl">
+        <constructor-arg name="userDao" ref="userDao"/>
+        <constructor-arg name="bookDao" ref="bookDao"/>
+    </bean>
+
+</beans>
