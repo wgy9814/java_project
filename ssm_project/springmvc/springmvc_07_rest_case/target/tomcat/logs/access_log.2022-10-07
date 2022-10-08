@@ -1,0 +1,15 @@
+127.0.0.1 - - [07/Oct/2022:22:55:42 +0800] "DELETE /books/11 HTTP/1.1" 404 949 http-bio-80-exec-1 42
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:14 +0800] "GET /pages/books.html HTTP/1.1" 200 6014 http-bio-80-exec-3 54
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:14 +0800] "GET /plugins/elementui/index.css HTTP/1.1" 200 198714 http-bio-80-exec-5 39
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:14 +0800] "GET /plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 31008 http-bio-80-exec-4 44
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:14 +0800] "GET /plugins/elementui/index.js HTTP/1.1" 200 494276 http-bio-80-exec-8 64
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:14 +0800] "GET /css/style.css HTTP/1.1" 200 11169 http-bio-80-exec-6 73
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:14 +0800] "GET /js/axios-0.18.0.js HTTP/1.1" 200 12956 http-bio-80-exec-10 55
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:14 +0800] "GET /js/vue.js HTTP/1.1" 200 311194 http-bio-80-exec-7 100
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:14 +0800] "GET /js/jquery.min.js HTTP/1.1" 200 86663 http-bio-80-exec-9 109
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:14 +0800] "GET /plugins/elementui/fonts/element-icons.woff HTTP/1.1" 200 6164 http-bio-80-exec-7 21
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:15 +0800] "GET /books HTTP/1.1" 200 310 http-bio-80-exec-9 60
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:03:15 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-80-exec-9 1
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:13:44 +0800] "POST /books HTTP/1.1" 200 30 http-bio-80-exec-2 35
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:13:53 +0800] "GET /js/axios.min.map HTTP/1.1" 404 949 http-bio-80-exec-2 1
+0:0:0:0:0:0:0:1 - - [07/Oct/2022:23:14:32 +0800] "POST /books HTTP/1.1" 200 30 http-bio-80-exec-2 1
