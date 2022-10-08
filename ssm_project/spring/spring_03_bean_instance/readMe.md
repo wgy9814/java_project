@@ -1,0 +1,1 @@
+spring bean实例化——构造方法，静态方法，bean实例化-实例工厂与FactoryBean

@@ -1,0 +1,2 @@
+Spring-23-注解开发管理第三方bean
+Spring-24-注解开发实现为第三方bean注入资源
