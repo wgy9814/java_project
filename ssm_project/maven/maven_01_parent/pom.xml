@@ -84,7 +84,7 @@
         <spring.version>5.2.10.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
         <mybatis-spring.version>1.3.0</mybatis-spring.version>
-        <jdbc.url>jdbc:mysql://127.0.0.1:3306/ssm_db</jdbc.url>
+<!--        <jdbc.url>jdbc:mysql://127.0.0.1:3306/ssm_db</jdbc.url>-->
     </properties>
 
     <!--定义依赖管理-->

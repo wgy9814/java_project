@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot_08_mybatis" />
+        <module name="springboot_01_quickstart" />
+        <module name="springboot_03_read_data" />
+        <module name="springboot_07_test" />
+        <module name="springboot_04_profile" />
+        <module name="springboot_05_maven_and_boot_profile" />
+        <module name="springboot_02_base_config" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springboot_01_quickstart" target="1.8" />
+      <module name="springboot_02_base_config" target="1.8" />
+      <module name="springboot_03_read_data" target="1.8" />
+      <module name="springboot_04_profile" target="1.8" />
+      <module name="springboot_05_maven_and_boot_profile" target="1.8" />
+      <module name="springboot_07_test" target="1.8" />
+      <module name="springboot_08_mybatis" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot_01_quickstart" options="-parameters" />
+      <module name="springboot_02_base_config" options="-parameters" />
+      <module name="springboot_03_read_data" options="-parameters" />
+      <module name="springboot_04_profile" options="-parameters" />
+      <module name="springboot_05_maven_and_boot_profile" options="-parameters" />
+      <module name="springboot_07_test" options="-parameters" />
+      <module name="springboot_08_mybatis" options="-parameters" />
+    </option>
+  </component>
+</project>

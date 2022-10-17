@@ -1,0 +1,11 @@
+server:
+  port: 82
+
+logging:
+  level:
+    root: warn
+
+likes:
+  - music
+  - game
+  - PE
