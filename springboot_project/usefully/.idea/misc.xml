@@ -13,6 +13,8 @@
         <option value="$PROJECT_DIR$/springboot_19_cache/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_20_jetcache/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_21_j2cache/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_22_task/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_23_mail/pom.xml" />
       </list>
     </option>
   </component>

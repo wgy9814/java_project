@@ -8,7 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springboot_15_sql" />
         <module name="springboot_19_cache" />
+        <module name="springboot_22_task" />
         <module name="springboot_17_mongodb" />
+        <module name="springboot_23_mail" />
         <module name="springboot_20_jetcache" />
         <module name="springboot_13_configuration" />
         <module name="springboot_14_test" />
@@ -29,6 +31,8 @@
       <module name="springboot_19_cache" target="1.8" />
       <module name="springboot_20_jetcache" target="1.8" />
       <module name="springboot_21_j2cache" target="1.8" />
+      <module name="springboot_22_task" target="1.8" />
+      <module name="springboot_23_mail" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -43,6 +47,8 @@
       <module name="springboot_19_cache" options="-parameters" />
       <module name="springboot_20_jetcache" options="-parameters" />
       <module name="springboot_21_j2cache" options="-parameters" />
+      <module name="springboot_22_task" options="-parameters" />
+      <module name="springboot_23_mail" options="-parameters" />
     </option>
   </component>
 </project>

@@ -12,6 +12,8 @@
       <module fileurl="file://$PROJECT_DIR$/springboot_19_cache/springboot_19_cache.iml" filepath="$PROJECT_DIR$/springboot_19_cache/springboot_19_cache.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot_20_jetcache/springboot_20_jetcache.iml" filepath="$PROJECT_DIR$/springboot_20_jetcache/springboot_20_jetcache.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot_21_j2cache/springboot_21_j2cache.iml" filepath="$PROJECT_DIR$/springboot_21_j2cache/springboot_21_j2cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_22_task/springboot_22_task.iml" filepath="$PROJECT_DIR$/springboot_22_task/springboot_22_task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_23_mail/springboot_23_mail.iml" filepath="$PROJECT_DIR$/springboot_23_mail/springboot_23_mail.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/usefully.iml" filepath="$PROJECT_DIR$/.idea/usefully.iml" />
     </modules>
   </component>

@@ -13,9 +13,9 @@ public class SendMailServiceImpl implements SendMailService {
     private JavaMailSender javaMailSender;
 
     //发送人
-    private String from = "test@qq.com";
+    private String from = "3208886054@qq.com";
     //接收人
-    private String to = "test@126.com";
+    private String to = "3547532517@qq.com";
     //标题
     private String subject = "测试邮件";
     //正文
