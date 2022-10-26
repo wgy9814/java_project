@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springboot_12_hot_deploy/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_13_configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_14_test/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_15_sql/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_16_redis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_17_mongodb/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_18_es/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_19_cache/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_20_jetcache/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_21_j2cache/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

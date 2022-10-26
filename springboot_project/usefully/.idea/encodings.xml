@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/springboot_12_hot_deploy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_13_configuration/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_14_test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_15_sql/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_16_redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_17_mongodb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_17_mongodb/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_18_es/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_18_es/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_19_cache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_20_jetcache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_21_j2cache/src/main/java" charset="UTF-8" />
+  </component>
+</project>
