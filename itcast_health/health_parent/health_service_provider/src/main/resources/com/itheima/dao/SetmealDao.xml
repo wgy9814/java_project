@@ -46,12 +46,55 @@
         </if>
     </select>
 
+    <delete id="deleteAssociation" parameterType="int">
+        delete from t_setmeal_checkgroup where setmeal_id = #{setmeal_id}
+    </delete>
+
+
     <select id="findAll" resultType="com.itheima.pojo.Setmeal">
         select * from t_setmeal
     </select>
 
     <!--根据套餐id查询套餐详情（包含基本信息、关联的检查组、检查项信息）-->
-    <select id="findById4Detail" parameterType="int" resultMap="findByIdResultMap">
+    <select id="findById" parameterType="int" resultMap="findByIdResultMap">
       select * from t_setmeal where id = #{id}
     </select>
+
+    <select id="findCheckGroupIdsBySetmealId" parameterType="int" resultType="int">
+        select checkgroup_id from t_setmeal_checkgroup where setmeal_id = #{setmeal_id}
+    </select>
+
+    <update id="edit" parameterType="com.itheima.pojo.Setmeal">
+        update t_setmeal
+        <set>
+            <if test="code != null">
+                code = #{code},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="helpCode != null">
+                helpCode = #{helpCode},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="attention != null">
+                attention = #{attention},
+            </if>
+            <if test="img != null">
+                img = #{img},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
 </mapper>

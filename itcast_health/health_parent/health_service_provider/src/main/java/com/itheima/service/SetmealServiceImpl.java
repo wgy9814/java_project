@@ -8,6 +8,7 @@ import com.itheima.constant.RedisConstant;
 import com.itheima.dao.SetmealDao;
 import com.itheima.entity.PageResult;
 import com.itheima.entity.QueryPageBean;
+import com.itheima.pojo.CheckGroup;
 import com.itheima.pojo.Setmeal;
 //import freemarker.template.Configuration;
 //import freemarker.template.Template;
@@ -78,7 +79,7 @@ public class SetmealServiceImpl implements SetmealService {
 //    public void generateMobileSetmealDetailHtml(List<Setmeal> list){
 //        for (Setmeal setmeal : list) {
 //            Map map = new HashMap();
-//            map.put("setmeal",setmealDao.findById4Detail(setmeal.getId()));
+//            map.put("setmeal",setmealDao.findById(setmeal.getId()));
 //            generteHtml("mobile_setmeal_detail.ftl","setmeal_detail_" + setmeal.getId() + ".html",map);
 //        }
 //    }
@@ -118,7 +119,22 @@ public class SetmealServiceImpl implements SetmealService {
         //查询套餐表，将基本信息查询出来
         //根据套餐id查询关联的检查组，再将查询出的检查组集合赋值给套餐对象
         //根据检查组id查询关联的检查项集合，将集合赋值给检查组对象
-        return setmealDao.findById4Detail(id);
+        return setmealDao.findById(id);
+    }
+
+    //编辑套餐信息，同时需要设置关联关系
+    public void edit(Setmeal setmeal, Integer[] checkgroupIds) {
+        //基本信息修改
+        setmealDao.edit(setmeal);
+        //清理检查组和检查项的关联关系（操作中间关系表）
+        setmealDao.deleteAssociation(setmeal.getId());
+        //重新建立检查组和检查项的关联关系
+        this.setSetmealAndCheckGroup(setmeal.getId(),checkgroupIds);
+    }
+
+    //根据检查组id查询关联的套餐id
+    public List<Integer> findCheckGroupIdsBySetmealId(Integer SetmealId) {
+        return setmealDao.findCheckGroupIdsBySetmealId(SetmealId);
     }
 
     //设置套餐和检查组多对多关联关系

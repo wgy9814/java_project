@@ -147,7 +147,7 @@
                         inputErrorMessage: '请输入数字'
                     }).then(({value}) => {
                         //发送ajax请求，修改可预约人数
-                        axios.post("/ordersetting/editNumberByOrderDate.do",{
+                        axios.post("/ordersetting/editNumberByDate.do",{
                             number:value,
                             orderDate:this.formatDate(day.getFullYear(),day.getMonth()+1,day.getDate())
                         }).then((res) => {
@@ -261,8 +261,8 @@
                         { date: 8, number: 120, reservations: 1 }
                     ];*/
 
-                    //发送ajax请求，根据年月查询对应的预约设置数据，赋值给leftobj对象，用于展示
-                    axios.get("/ordersetting/getOrderSettingByMonth.do?month=" + this.currentYear + "-" + this.currentMonth).then((res) => {
+                    //发送ajax请求，根据当前页面对应的月份查询数据库，封装成相应结果赋值给leftobj模型数据，用于页面展示
+                    axios.post("/ordersetting/getOrderSettingByMonth.do?date=" + this.currentYear + "-" + this.currentMonth).then((res) => {
                         if(res.data.flag){
                             this.leftobj = res.data.data;
                         }else{

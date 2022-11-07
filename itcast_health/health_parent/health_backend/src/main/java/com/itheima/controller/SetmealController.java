@@ -7,6 +7,7 @@ import com.itheima.constant.RedisConstant;
 import com.itheima.entity.PageResult;
 import com.itheima.entity.QueryPageBean;
 import com.itheima.entity.Result;
+import com.itheima.pojo.CheckItem;
 import com.itheima.pojo.Setmeal;
 import com.itheima.service.SetmealService;
 import com.itheima.utils.QiniuUtils;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import redis.clients.jedis.JedisPool;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -69,5 +71,42 @@ public class SetmealController {
     @RequestMapping("/findPage")
     public PageResult findPage(@RequestBody QueryPageBean queryPageBean){
         return setmealService.findPage(queryPageBean);
+    }
+
+    //编辑检查项
+    @RequestMapping("/edit")
+    public Result edit(@RequestBody Setmeal setmeal,Integer[] checkgroupIds){
+        try{
+            setmealService.edit(setmeal,checkgroupIds);
+        }catch (Exception e){
+            e.printStackTrace();
+            //服务调用失败
+            return new Result(false, MessageConstant.EDIT_SETMEAL_FAIL);
+        }
+        return  new Result(true, MessageConstant.EDIT_SETMEAL_SUCCESS);
+    }
+
+    @RequestMapping("/findById")
+    public Result findById(Integer id){
+        try{
+            Setmeal setmeal = setmealService.findById(id);
+            return  new Result(true, MessageConstant.QUERY_SETMEAL_SUCCESS,setmeal);
+        }catch (Exception e){
+            e.printStackTrace();
+            //服务调用失败
+            return new Result(false, MessageConstant.QUERY_SETMEAL_FAIL);
+        }
+    }
+
+    //根据检查组id查询关联的套餐id
+    @RequestMapping("/findCheckGroupIdsBySetmealId")
+    public Result findCheckGroupIdsBySetmealId(Integer SetmealId){
+        try{
+            List<Integer> list = setmealService.findCheckGroupIdsBySetmealId(SetmealId);
+            return new Result(true,MessageConstant.QUERY_CHECKGROUP_SUCCESS,list);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Result(false,MessageConstant.QUERY_CHECKGROUP_FAIL);
+        }
     }
 }
