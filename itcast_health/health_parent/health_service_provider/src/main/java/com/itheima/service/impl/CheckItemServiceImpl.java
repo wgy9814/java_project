@@ -1,4 +1,4 @@
-package com.itheima.service;
+package com.itheima.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 
@@ -9,6 +9,7 @@ import com.itheima.dao.CheckItemDao;
 import com.itheima.entity.PageResult;
 import com.itheima.entity.QueryPageBean;
 import com.itheima.pojo.CheckItem;
+import com.itheima.service.CheckItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -11,8 +11,9 @@ public interface SetmealDao {
     public void setSetmealAndCheckGroup(Map<String, Integer> map);
     public Page<Setmeal> findByCondition(String queryString);
     public List<Setmeal> findAll();
-    public Setmeal findById(Integer id);
+    public Setmeal findById4Detail(Integer id);
     public List<Integer> findCheckGroupIdsBySetmealId(Integer SetmealId);
     public void edit(Setmeal setmeal);
     public void deleteAssociation(Integer setmealId);
+    public List<Map<String, Object>> findSetmealCount();
 }

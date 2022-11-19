@@ -48,17 +48,12 @@
     var vue = new Vue({
         el:'#app',
         data:{
-            setmealList:[]//模型数据，用于套餐列表展示
+            setmealList:[]//套餐列表数据
         },
         mounted (){
-            //发送ajax请求，获取所有的套餐数据，赋值给setmealList模型数据，用于页面展示
-            axios.get("/setmeal/getAllSetmeal.do").then((res) => {
-                if(res.data.flag){
-                    //查询成功，给模型数据赋值
-                    this.setmealList = res.data.data;
-                }else{
-                    //查询失败，弹出提示信息
-                    this.$message.error(res.data.message);
+            axios.post("/setmeal/getSetmeal.do").then((response)=>{
+                if(response.data.flag){
+                    this.setmealList = response.data.data;
                 }
             });
         }

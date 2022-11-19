@@ -333,6 +333,18 @@
                     //重新调用findPage方法进行分页查询
                     this.findPage();
                 },
+
+                showMessage(r){
+                    if(r == 'Error: Request failed with status code 403'){
+                        //权限不足
+                        this.$message.error('无访问权限');
+                        return;
+                    }else{
+                        this.$message.error('未知错误');
+                        return;
+                    }
+                },
+
                 // 删除
                 handleDelete(row) {//row其实是一个json对象，json对象的结构为{"age":"0-100","attention":"无","code":"0011","id":38,"name":"白细胞计数","price":10.0,"remark":"白细胞计数","sex":"0","type":"2"}
                     //alert(row.id);
@@ -354,6 +366,8 @@
                                 //执行失败
                                 this.$message.error(res.data.message);
                             }
+                        }).catch((r)=>{
+                            this.showMessage(r);
                         });
                     }).catch(()=>{
                         this.$message({

@@ -56,7 +56,7 @@
     </select>
 
     <!--根据套餐id查询套餐详情（包含基本信息、关联的检查组、检查项信息）-->
-    <select id="findById" parameterType="int" resultMap="findByIdResultMap">
+    <select id="findById4Detail" parameterType="int" resultMap="findByIdResultMap">
       select * from t_setmeal where id = #{id}
     </select>
 
@@ -97,4 +97,7 @@
         </set>
         where id = #{id}
     </update>
+    <select id="findSetmealCount" resultType="map">
+        select s.name, count(o.id) value from t_order o,t_setmeal s where o.setmeal_id = s.id group by s.name
+    </select>
 </mapper>
