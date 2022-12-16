@@ -1,0 +1,10 @@
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+spring:
+  rabbitmq:
+    host: 119.29.169.37 # rabbitMQ的ip地址
+    port: 56720 # 端口
+    username: heima
+    password: heima
+    virtual-host: /
