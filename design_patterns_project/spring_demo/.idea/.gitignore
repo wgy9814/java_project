@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../:\进阶课程\黑马程序员课件\java设计模式（图解+框架源码分析+实战）\资料-java设计模式（图解+框架源码分析+实战）\Java设计模式资料day06\代码\spring_demo\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
