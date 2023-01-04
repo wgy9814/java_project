@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
 @RestController
 @RequestMapping("/books")
@@ -59,9 +58,14 @@ public class BookController {
 //        return new R(true, page);
 //    }
 
+//    @Autowired
+//    private IpCountService ipCountService;
+
     @GetMapping("{currentPage}/{pageSize}")
     public R getPage(@PathVariable int currentPage,@PathVariable int pageSize,Book book){
 //        System.out.println("参数==>"+book);
+
+//        ipCountService.count();
 
         IPage<Book> page = bookService.getPage(currentPage, pageSize,book);
         //如果当前页码值大于了总页码值，那么重新执行查询操作，使用最大页码值作为当前页码值

@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.itheima.service.IBookService;
 import com.itheima.dao.BookDao;
 import com.itheima.domain.Book;
-import com.itheima.service.IBookService;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,12 @@ public class BookServiceImpl extends ServiceImpl<BookDao, Book> implements IBook
 
     @Autowired
     private BookDao bookDao;
+
+    private Counter counter;
+
+    public BookServiceImpl(MeterRegistry meterRegistry){
+        counter = meterRegistry.counter("用户付费操作次数：");
+    }
 
     @Override
     public boolean saveBook(Book book) {
@@ -29,6 +37,8 @@ public class BookServiceImpl extends ServiceImpl<BookDao, Book> implements IBook
 
     @Override
     public boolean delete(Integer id) {
+        //每次执行删除业务等同于执行了付费业务
+        counter.increment();
         return bookDao.deleteById(id) > 0;
     }
 

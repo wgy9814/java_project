@@ -2,8 +2,7 @@ package com.itheima;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Arrays;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class SSMPApplication {
@@ -14,7 +13,10 @@ public class SSMPApplication {
 //        arg[0] = "--server.port=8082";
 //        SpringApplication.run(SSMPApplication.class, arg);
         //可以在启动boot程序时断开读取外部临时配置对应的入口，也就是去掉读取外部参数的形参
-        SpringApplication.run(SSMPApplication.class);
+        ConfigurableApplicationContext run = SpringApplication.run(SSMPApplication.class);
+//        for (String name : run.getBeanDefinitionNames()) {
+//            System.out.println(name);
+//        }
     }
 
 }
