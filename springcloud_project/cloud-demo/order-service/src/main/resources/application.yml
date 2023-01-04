@@ -14,6 +14,7 @@ spring:
     sentinel:
       transport:
         dashboard: localhost:8090 # sentinel控制台地址
+      web-context-unify: false # 关闭context整合
 #      discovery:
 #        cluster-name: HZ #集群名称
 #        namespace: 9a11dea2-bf1b-4381-9fc3-72028243ce4d # dev命名空间，填ID
