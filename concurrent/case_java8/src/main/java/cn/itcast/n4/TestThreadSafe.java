@@ -46,14 +46,14 @@ class ThreadSafe {
         list.add("1");
     }
 
-    private void method3(ArrayList<String> list) {
+    public void method3(ArrayList<String> list) {
         System.out.println(1);
         list.remove(0);
     }
 }
 
 class ThreadSafeSubClass extends ThreadSafe{
-//    @Override
+    @Override
     public void method3(ArrayList<String> list) {
         System.out.println(2);
         new Thread(() -> {
