@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jasper-springboot/jasper-springboot.iml" filepath="$PROJECT_DIR$/jasper-springboot/jasper-springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jr-demo/jr-demo.iml" filepath="$PROJECT_DIR$/jr-demo/jr-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qiniu-demo/qiniu-demo.iml" filepath="$PROJECT_DIR$/qiniu-demo/qiniu-demo.iml" />
+    </modules>
+  </component>
+</project>
