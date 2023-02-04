@@ -3,7 +3,7 @@
 		<layout-sidebar class="sidebar-container"></layout-sidebar>
 		<div class="main-container">
 			<layout-navbar></layout-navbar>
-			<layout-tags></layout-tags>
+			<!-- <layout-tags></layout-tags> -->
 			<layout-app-main></layout-app-main>
       <div class="bottom">
         <p>

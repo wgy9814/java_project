@@ -36,6 +36,9 @@ const user = {
     SET_NAME: (state, name) => {
       state.name = name
     },
+    SET_ID: (state, userId) => {
+      state.userId = userId
+    },
     SET_AVATAR: (state, avatar) => {
       state.avatar = avatar || 'http://or45inefq.bkt.clouddn.com/itheima-avatar.png'
     },
@@ -57,9 +60,11 @@ const user = {
             password: userInfo.password
           }).then(response => {
             const data = response.data.data
+            console.log(data)
             commit('SET_TOKEN', data)
             setToken(data)
             resolve()
+            console.log(data)
         }).catch(error => {
           reject(error)
         })
@@ -73,6 +78,7 @@ const user = {
           const data = response.data.data
           commit('SET_ROLES', data.roles?data.roles:{menus:[],points:[]})
           commit('SET_NAME', data.username)
+          commit('SET_ID', data.userId)
           commit('SET_AVATAR', data.avatar)
           commit('SET_INTRODUCTION', data.company)
           commit('SET_APPROVALS', data.approvals)

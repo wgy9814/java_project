@@ -15,7 +15,7 @@ const ok = "10000";
 instance.interceptors.request.use(
   config => {
     // Do something before request is sent
-    if (store.getters.token) {
+    if (getToken()) {
       config.headers['Authorization'] = `Bearer ${getToken()}` // 让每个请求携带token-- ['X-Token']为自定义key 请根据实际情况自行修改
     }
     return config
@@ -37,7 +37,7 @@ instance.interceptors.response.use(
     if (errCode !== undefined) {
       // debugger
       // 50008:非法的token; 50012:其他客户端登录了;  50014:Token 过期了;
-      if (errCode === 50008 || errCode === 50012 || errCode === 50014) {
+      if (errCode === 50008 || errCode === 50012 || errCode === 50014 || errCode === 10002)  {
         Message({
           message: '你已被登出，请重新登录',
           type: 'error',
@@ -104,6 +104,9 @@ export const createAPI = (url, method, data) => {
   } else {
     config.data = data
   }
+  // config.headers = {
+  //   'Content-Type': 'json'
+  // }
   return instance({
     url,
     method,

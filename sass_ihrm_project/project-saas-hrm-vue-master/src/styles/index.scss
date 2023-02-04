@@ -227,6 +227,32 @@ code {
 }
 .iconRed{background: #f5222d;}
 .iconGreen{background: green;}
+.timePicker.el-input{
+  width: 120px;
+}
+.attentInfo .deductionInfo p{
+  padding: 8px 0;
+}
+.deductionInfo{
+  padding-left: 120px;
+}
+.attenInfo{
+  .el-radio{
+    display: inline-block;
+    width: 60px;
+    padding: 5px 0;
+  }
+}
+.archivig{
+  padding: 200px 0;
+
+  text-align: center
+}
+.inputInfo{width: 50px;}
+.textInfo{
+  text-align: center;
+  padding: 50px 0;
+}
 @-webkit-keyframes antStatusProcessing {
     0% {
         -webkit-transform: scale(.8);

@@ -15,12 +15,12 @@ public class QiniuUploadUtil {
     private static final String accessKey = "F0kJ8mgTr6Xt0JebPh1iFCOKB_5kpZe_KL7bcL3A";
     private static final String secretKey = "5Zulg3byOy5Y1SBhDLNywSYeYt-z-UhO9aLDnvJ9";
     private static final String bucket = "wgy-ihrm-bucket";
-    private static final String prix = "http://pkbivgfrm.bkt.clouddn.com/";
+    private static final String prix = "http://rpb0xta98.hn-bkt.clouddn.com/";
     private UploadManager manager;
 
     public QiniuUploadUtil() {
         //初始化基本配置
-        Configuration cfg = new Configuration(Zone.zone0());
+        Configuration cfg = new Configuration(Zone.zone2());
         //创建上传管理器
         manager = new UploadManager(cfg);
     }

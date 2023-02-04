@@ -103,6 +103,7 @@ export default {
       this.dialogImportVisible = false
       if (obj.code === 10000) {
         this.$message.success('导入成功' + '!')
+        this.$router.back(-1)
       } else {
         this.$message.error('导入失败' + '!')
       }

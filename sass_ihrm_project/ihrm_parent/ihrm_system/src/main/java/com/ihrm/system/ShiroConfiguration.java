@@ -23,7 +23,7 @@ public class ShiroConfiguration {
 
     //1.创建realm
     @Bean
-    public IhrmRealm UserRealm() {
+    public IhrmRealm getRealm() {
         return new UserRealm();
     }
 
@@ -60,6 +60,7 @@ public class ShiroConfiguration {
         Map<String,String> filterMap = new LinkedHashMap<>();
         //anon -- 匿名访问
         filterMap.put("/sys/login","anon");
+        filterMap.put("/sys/faceLogin/**","anon");
         filterMap.put("/autherror","anon");
         //注册
         //authc -- 认证之后访问（登录）
@@ -102,7 +103,7 @@ public class ShiroConfiguration {
         CustomSessionManager sessionManager = new CustomSessionManager();
         sessionManager.setSessionDAO(redisSessionDAO());
         //禁用cookie
-        sessionManager.setSessionIdCookieEnabled(false);
+        //sessionManager.setSessionIdCookieEnabled(false);
         //禁用url重写   url;jsessionid=id
         sessionManager.setSessionIdUrlRewritingEnabled(false);
         return sessionManager;

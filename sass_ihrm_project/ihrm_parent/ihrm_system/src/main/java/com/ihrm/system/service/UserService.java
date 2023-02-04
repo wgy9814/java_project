@@ -9,6 +9,8 @@ import com.ihrm.domain.system.User;
 import com.ihrm.system.client.DepartmentFeignClient;
 import com.ihrm.system.dao.RoleDao;
 import com.ihrm.system.dao.UserDao;
+import com.ihrm.system.utils.BaiduAiUtil;
+import com.sun.org.apache.xml.internal.security.utils.Base64;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -204,7 +206,16 @@ public class UserService extends BaseService{
 //        return encode;
 //    }
 
+    @Autowired
+    private BaiduAiUtil baiduAiUtil;
 
+    /**
+     * 上传到七牛云存储
+     * 注册到百度云AI人脸库
+     *      1.调用百度云接口，判断当前用户是否已经注册
+     *      2.已注册，更新
+     *      3.未注册，注册
+     */
     public String uploadImage(String id, MultipartFile file) throws IOException {
         //1.根据id查询用户
         User user = userDao.findById(id).get();
@@ -213,6 +224,17 @@ public class UserService extends BaseService{
         //3.更新用户头像地址
         user.setStaffPhoto(imgUrl);
         userDao.save(user);
+
+        //判断是否已经注册面部信息
+        Boolean aBoolean = baiduAiUtil.faceExist(id);
+        String imgBase64 = Base64.encode(file.getBytes());
+        if (aBoolean) {
+            //更新
+            baiduAiUtil.faceUpdate(id,imgBase64);
+        }else{
+            //注册
+            baiduAiUtil.faceRegister(id,imgBase64);
+        }
         //4.返回
         return imgUrl;
     }

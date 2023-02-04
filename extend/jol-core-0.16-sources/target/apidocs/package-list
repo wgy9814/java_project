@@ -1,0 +1,7 @@
+org.openjdk.jol.datamodel
+org.openjdk.jol.heap
+org.openjdk.jol.info
+org.openjdk.jol.layouters
+org.openjdk.jol.util
+org.openjdk.jol.vm
+org.openjdk.jol.vm.sa
