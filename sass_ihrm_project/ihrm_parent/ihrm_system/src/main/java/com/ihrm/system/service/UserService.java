@@ -9,7 +9,7 @@ import com.ihrm.domain.system.User;
 import com.ihrm.system.client.DepartmentFeignClient;
 import com.ihrm.system.dao.RoleDao;
 import com.ihrm.system.dao.UserDao;
-import com.ihrm.system.utils.BaiduAiUtil;
+//import com.ihrm.system.utils.BaiduAiUtil;
 import com.sun.org.apache.xml.internal.security.utils.Base64;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -206,8 +206,8 @@ public class UserService extends BaseService{
 //        return encode;
 //    }
 
-    @Autowired
-    private BaiduAiUtil baiduAiUtil;
+//    @Autowired
+//    private BaiduAiUtil baiduAiUtil;
 
     /**
      * 上传到七牛云存储
@@ -226,15 +226,15 @@ public class UserService extends BaseService{
         userDao.save(user);
 
         //判断是否已经注册面部信息
-        Boolean aBoolean = baiduAiUtil.faceExist(id);
-        String imgBase64 = Base64.encode(file.getBytes());
-        if (aBoolean) {
-            //更新
-            baiduAiUtil.faceUpdate(id,imgBase64);
-        }else{
-            //注册
-            baiduAiUtil.faceRegister(id,imgBase64);
-        }
+//        Boolean aBoolean = baiduAiUtil.faceExist(id);
+//        String imgBase64 = Base64.encode(file.getBytes());
+//        if (aBoolean) {
+//            //更新
+//            baiduAiUtil.faceUpdate(id,imgBase64);
+//        }else{
+//            //注册
+//            baiduAiUtil.faceRegister(id,imgBase64);
+//        }
         //4.返回
         return imgUrl;
     }

@@ -20,7 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.concurrent.TimeUnit;
 
-@Service
+//@Service
 public class FaceLoginService {
 
     @Value("${qr.url}")

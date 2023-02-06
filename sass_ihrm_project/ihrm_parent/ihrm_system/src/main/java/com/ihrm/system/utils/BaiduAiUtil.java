@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
 
-@Component
+//@Component
 public class BaiduAiUtil {
 
     @Value("${ai.appId}")

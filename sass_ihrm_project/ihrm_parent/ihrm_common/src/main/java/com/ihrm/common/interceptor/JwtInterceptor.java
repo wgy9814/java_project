@@ -31,7 +31,7 @@ import javax.servlet.http.HttpServletResponse;
  * 2.判断用户是否具有当前访问接口的权限
  *
  */
-@Component
+//@Component
 public class JwtInterceptor extends HandlerInterceptorAdapter {
 
     /**
