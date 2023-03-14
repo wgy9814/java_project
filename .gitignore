@@ -30,3 +30,11 @@
 /concurrent/jmh_eliminate_locks/target
 /concurrent/jcstress_ordering/target
 /concurrent/case_tomcat/target
+/sass_ihrm_project/ihrm_parent/.idea
+/sass_ihrm_project/ihrm_parent/ihrm_common_model/target
+/sass_ihrm_project/ihrm_parent/ihrm_common/target
+/sass_ihrm_project/ihrm_parent/ihrm_company/target
+/sass_ihrm_project/ihrm_parent/ihrm_system/target
+/sass_ihrm_project/ihrm_parent/ihrm_gate/target
+/sass_ihrm_project/ihrm_parent/ihrm_employee/target
+/sass_ihrm_project/ihrm_parent/ihrm_social_securitys/target
