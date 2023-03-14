@@ -1,0 +1,302 @@
+
+  Evaluation Warning : The document was created with Spire.PDF for Java.
+           会话技术                                                                                                       
+
+           今日目标
+
+                理解什么是会话跟踪技术
+                掌握Cookie的使用
+                掌握Session的使用
+                完善用户登录注册案例的功能
+
+           1，会话跟踪技术的概述                                                                                          
+
+           对于会话跟踪这四个词，我们需要拆开来进行解释，首先要理解什么是会话，然后再去理解什么是会
+           话跟踪:
+
+              会话:用户打开浏览器，访问web服务器的资源，会话建立，直到有一方断开连接，会话结束。在
+              一次会话中可以包含多次请求和响应。
+
+                  从浏览器发出请求到服务端响应数据给前端之后，一次会话(在浏览器和服务器之间)就被建立
+                  了
+                  会话被建立后，如果浏览器或服务端都没有被关闭，则会话就会持续建立着
+                  浏览器和服务器就可以继续使用该会话进行请求发送和响应，上述的整个过程就被称之为会
+                  话。
+
+              用实际场景来理解下会话，比如在我们访问京东的时候，当打开浏览器进入京东首页后，浏览器和
+              京东的服务器之间就建立了一次会话，后面的搜索商品,查看商品的详情,加入购物车等都是在这一
+              次会话中完成。
+
+              思考:下图中总共建立了几个会话?
+
+
+
+              每个浏览器都会与服务端建立了一个会话，加起来总共是3个会话。
+
+              会话跟踪:一种维护浏览器状态的方法，服务器需要识别多次请求是否来自于同一浏览器，以便在
+              同一次会话的多次请求间共享数据。
+
+                  服务器会收到多个请求，这多个请求可能来自多个浏览器，如上图中的6个请求来自3个浏览器
+                  服务器需要用来识别请求是否来自同一个浏览器
+                  服务器用来识别浏览器的过程，这个过程就是会话跟踪
+                  服务器识别浏览器后就可以在同一个会话中多次请求之间来共享数据
+
+              那么我们又有一个问题需要思考，一个会话中的多次请求为什么要共享数据呢?有了这个数据共享
+              功能后能实现哪些功能呢?
+
+                  购物车:   加入购物车和去购物车结算是两次请求，但是后面这次请求要想展示前一次请求所添加
+                  的商品，就需要用到数据共享。
+
+
+
+                  页面展示用户登录信息:很多网站，登录后访问多个功能发送多次请求后，浏览器上都会有当前
+                  登录用户的信息[用户名]，比如百度、京东、码云等。
+
+
+
+                  网站登录页面的记住我功能:当用户登录成功后，勾选记住我按钮后下次再登录的时候，网站就
+                  会自动填充用户名和密码，简化用户的登录操作，多次登录就会有多次请求，他们之间也涉及
+                  到共享数据
+
+                  登录页面的验证码功能:生成验证码和输入验证码点击注册这也是两次请求，这两次请求的数据
+                  之间要进行对比，相同则允许注册，不同则拒绝注册，该功能的实现也需要在同一次会话中共
+                  享数据。
+
+
+
+           通过这几个例子的讲解，相信大家对会话追踪技术已经有了一定的理解，该技术在实际开发中也非常
+           重要。那么接下来我们就需要去学习下会话跟踪技术，在学习这些技术之前，我们需要思考:为什么现
+           在浏览器和服务器不支持数据共享呢?
+
+              浏览器和服务器之间使用的是HTTP请求来进行数据传输
+              HTTP协议是无状态的，每次浏览器向服务器请求时，服务器都会将该请求视为新的请求
+              HTTP协议设计成无状态的目的是让每次请求之间相互独立，互不影响
+              请求与请求之间独立后，就无法实现多次请求之间的数据共享
+
+           分析完具体的原因后，那么该如何实现会话跟踪技术呢?            具体的实现方式有:
+
+           (1)客户端会话跟踪技术：Cookie
+
+           (2)服务端会话跟踪技术：Session
+
+           这两个技术都可以实现会话跟踪，它们之间最大的区别:Cookie是存储在浏览器端而Session是存储
+           在服务器端
+
+           具体的学习思路为:
+
+              CooKie的基本使用、原理、使用细节
+              Session的基本使用、原理、使用细节
+              Cookie和Session的综合案例
+
+           小结
+
+           在这节中，我们主要介绍了下什么是会话和会话跟踪技术，需要注意的是:
+
+              HTTP协议是无状态的，靠HTTP协议是无法实现会话跟踪
+              想要实现会话跟踪，就需要用到Cookie和Session
+
+           这个Cookie和Session具体该如何使用，接下来就先从Cookie来学起。
+
+           2，Cookie                                                                                                      
+
+           学习Cookie，我们主要解决下面几个问题:
+
+              什么是Cookie?
+              Cookie如何来使用?
+              Cookie是如何实现的?
+              Cookie的使用注意事项有哪些?
+
+           2.1 Cookie的基本使用                                                                                           
+
+           1.概念
+
+           Cookie：客户端会话技术，将数据保存到客户端，以后每次请求都携带Cookie数据进行访问。
+
+           2.Cookie的工作流程
+
+
+
+              服务端提供了两个Servlet，分别是ServletA和ServletB
+              浏览器发送HTTP请求1给服务端，服务端ServletA接收请求并进行业务处理
+              服务端ServletA在处理的过程中可以创建一个Cookie对象并将name=zs的数据存入Cookie
+              服务端ServletA在响应数据的时候，会把Cookie对象响应给浏览器
+              浏览器接收到响应数据，会把Cookie对象中的数据存储在浏览器内存中，此时浏览器和服务端就
+              建立了一次会话
+
+              在同一次会话中浏览器再次发送HTTP请求2给服务端ServletB，浏览器会携带Cookie对象中的
+              所有数据
+              ServletB接收到请求和数据后，就可以获取到存储在Cookie对象中的数据，这样同一个会话中
+              的多次请求之间就实现了数据共享
+
+           3.Cookie的基本使用
+
+           对于Cookie的使用，我们更关注的应该是后台代码如何操作Cookie，对于Cookie的操作主要分两大
+           类，本别是发送Cookie和获取Cookie,对于上面这两块内容，分别该如何实现呢?
+
+           3.1 发送Cookie
+
+              创建Cookie对象，并设置数据
+
+            1 Cookie cookie = new Cookie("key","value");
+
+              发送Cookie到客户端：使用response对象
+
+            1 response.addCookie(cookie);
+
+           介绍完发送Cookie对应的步骤后，接下面通过一个案例来完成Cookie的发送，具体实现步骤为:
+
+            需求:在Servlet中生成Cookie对象并存入数据，然后将数据发送给浏览器
+
+            1.创建Maven项目,项目名称为cookie-demo，并在pom.xml添加依赖
+
+            2.编写Servlet类，名称为AServlet
+
+            3.在AServlet中创建Cookie对象，存入数据，发送给前端
+
+            4.启动测试，在浏览器查看Cookie对象中的值
+
+           (1)创建Maven项目cookie-demo，并在pom.xml添加依赖
+
+             1 <properties>
+             2       <maven.compiler.source>8</maven.compiler.source>
+             3       <maven.compiler.target>8</maven.compiler.target>
+             4 </properties>
+             5    
+             6 <dependencies>
+             7       <!--servlet-->
+             8       <dependency>
+             9           <groupId>javax.servlet</groupId>
+            10           <artifactId>javax.servlet-api</artifactId>
+            11           <version>3.1.0</version>
+            12           <scope>provided</scope>
+            13       </dependency>
+            14       <!--jsp-->
+            15       <dependency>
+            16           <groupId>javax.servlet.jsp</groupId>
+
+             17           <artifactId>jsp-api</artifactId>
+             18           <version>2.2</version>
+             19           <scope>provided</scope>
+             20       </dependency>
+             21       <!--jstl-->
+             22       <dependency>
+             23           <groupId>jstl</groupId>
+             24           <artifactId>jstl</artifactId>
+             25           <version>1.2</version>
+             26       </dependency>
+             27       <dependency>
+             28           <groupId>taglibs</groupId>
+             29           <artifactId>standard</artifactId>
+             30           <version>1.1.2</version>
+             31       </dependency>
+             32 </dependencies>
+             33 <build>
+             34       <plugins>
+             35           <plugin>
+             36               <groupId>org.apache.tomcat.maven</groupId>
+             37               <artifactId>tomcat7-maven-plugin</artifactId>
+             38               <version>2.2</version>
+             39           </plugin>
+             40       </plugins>
+             41 </build>
+
+           (2)编写Servlet类，名称为AServlet
+
+              1 @WebServlet("/aServlet")
+              2 public class AServlet extends HttpServlet {
+              3       @Override
+              4       protected void doGet(HttpServletRequest request, HttpServletResponse 
+                 response) throws ServletException, IOException {
+              5    
+              6       }
+              7    
+              8       @Override
+              9       protected void doPost(HttpServletRequest request, HttpServletResponse 
+                 response) throws ServletException, IOException {
+             10           this.doGet(request, response);
+             11       }
+             12 }
+
+           (3)在Servlet中创建Cookie对象，存入数据，发送给前端
+
+              1 @WebServlet("/aServlet")
+              2 public class AServlet extends HttpServlet {
+              3       @Override
+
+              4       protected void doGet(HttpServletRequest request, HttpServletResponse 
+                 response) throws ServletException, IOException {
+              5           //发送Cookie
+              6           //1. 创建Cookie对象
+              7           Cookie cookie = new Cookie("username","zs");
+              8           //2. 发送Cookie，response
+              9           response.addCookie(cookie);
+             10       }
+             11    
+             12       @Override
+             13       protected void doPost(HttpServletRequest request, HttpServletResponse 
+                 response) throws ServletException, IOException {
+             14           this.doGet(request, response);
+             15       }
+             16 }
+
+           （4）启动测试，在浏览器查看Cookie对象中的值
+
+           访问http://localhost:8080/cookie-demo/aServlet
+
+           chrome浏览器查看Cookie的值，有两种方式,分布式:
+
+           方式一:
+
+
+           方式二:选中打开开发者工具或者 使用快捷键F12            或者 Ctrl+Shift+I
+
+           3.2 获取Cookie
+
+               获取客户端携带的所有Cookie，使用request对象
+
+             1 Cookie[] cookies = request.getCookies();
+
+               遍历数组，获取每一个Cookie对象：for
+               使用Cookie对象方法获取数据
+
+             1 cookie.getName();
+             2 cookie.getValue();
+
+           介绍完获取Cookie对应的步骤后，接下面再通过一个案例来完成Cookie的获取，具体实现步骤为:
+
+             需求:在Servlet中获取前一个案例存入在Cookie对象中的数据
+
+             1.编写一个新Servlet类，名称为BServlet
+
+             2.在BServlet中使用request对象获取Cookie数组，遍历数组，从数据中获取指定名称对应的
+             值
+
+             3.启动测试，在控制台打印出获取的值
+
+           (1)编写一个新Servlet类，名称为BServlet
+
+              1 @WebServlet("/bServlet")
+              2 public class BServlet extends HttpServlet {
+              3       @Override
+              4       protected void doGet(HttpServletRequest request, HttpServletResponse 
+                 response) throws ServletException, IOException {
+              5    
+              6       }
+              7    
+              8       @Override
+              9       protected void doPost(HttpServletRequest request, HttpServletResponse 
+                 response) throws ServletException, IOException {
+             10           this.doGet(request, response);
+             11       }
+             12 }
+
+           （2）在BServlet中使用request对象获取Cookie数组，遍历数组，从数据中获取指定名称对应的
+           值
+
+              1 @WebServlet("/bServlet")
+              2 public class BServlet extends HttpServlet {
+              3       @Override
+              4       protected void doGet(HttpServletRequest request, HttpServletResponse 
+                  response) throws ServletException, IOException {
+              5           //获取Cookie
+
