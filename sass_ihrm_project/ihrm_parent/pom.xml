@@ -10,14 +10,13 @@
     <modules>
         <module>ihrm_common</module>
         <module>ihrm_common_model</module>
-        <module>ihrm_common</module>
-        <module>ihrm_common_model</module>
         <module>ihrm_company</module>
         <module>ihrm_system</module>
         <module>ihrm_employee</module>
         <module>ihrm_eureka</module>
         <module>ihrm_gate</module>
         <module>ihrm_social_securitys</module>
+        <module>ihrm_attendance</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -109,7 +108,21 @@
             <artifactId>poi-ooxml-schemas</artifactId>
             <version>4.0.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.olap4j</groupId>
+            <artifactId>olap4j</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>2.1.7</version>
+        </dependency>
         <dependency>
             <groupId>com.qiniu</groupId>
             <artifactId>qiniu-java-sdk</artifactId>
